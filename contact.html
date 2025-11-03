@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Ryzon - Get in Touch</title>
     <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script src="https://unpkg.com/lottie-web@5.7.4/build/player/lottie.min.js"></script>
     <script type="text/javascript">
         (function(){
             emailjs.init("CuTH12h2jcq2vaymN"); // <-- replace with your actual public key
@@ -161,16 +162,16 @@
         }
 
         .info-icon {
-            width: 3.5rem;
-            height: 3.5rem;
-            background: var(--gradient-primary);
+            padding: 0.5rem;
+            width: 4.5rem;
+            height: 4.5rem;
+            background: hsla(217, 91%, 60%, 0.1);
             border-radius: 1rem;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: white;
+            color: var(--color-primary);
             margin-bottom: 1.5rem;
-            font-size: 1.5rem;
         }
 
         .info-card h3 {
@@ -812,28 +813,68 @@
                 <!-- Contact Info -->
                 <div class="contact-info">
                     <div class="info-card">
-                        <div class="info-icon"><img src="icons/email.png" alt="Email Us" width="32" height="32"></div>
+                        <!-- <div class="info-icon"><img src="icons/email.png" alt="Email Us" width="32" height="32"></div> -->
+                        <div class="info-icon" id="animated-icon-23" style="width:24; height:24;"></div>
+                        <script>
+                            lottie.loadAnimation({
+                                container: document.getElementById('animated-icon-23'), // the DOM element
+                                renderer: 'svg', // or 'canvas'
+                                loop: true,
+                                autoplay: true,
+                                path: 'lotti-icons/mail.json' // URL to your .json file
+                            });
+                        </script>
                         <h3>Email Us</h3>
                         <p>For general inquiries and support</p>
                         <a href="mailto:mustaphaaliyu616@gmail.com">hello@ryzonpay.com</a>
                     </div>
 
                     <div class="info-card">
-                        <div class="info-icon"><img src="icons/suitcase.png" alt="Business" width="32" height="32"></div>
+                        <!-- <div class="info-icon"><img src="icons/suitcase.png" alt="Business" width="32" height="32"></div> -->
+                        <div class="info-icon" id="animated-icon-24" style="width:24; height:24;"></div>
+                        <script>
+                            lottie.loadAnimation({
+                                container: document.getElementById('animated-icon-24'), // the DOM element
+                                renderer: 'svg', // or 'canvas'
+                                loop: true,
+                                autoplay: true,
+                                path: 'lotti-icons/Portfolio.json' // URL to your .json file
+                            });
+                        </script>
                         <h3>Business Inquiries</h3>
                         <p>Partnerships and business opportunities</p>
                         <a href="mailto:mustaphaaliyu616@gmail.com">business@ryzonpay.com</a>
                     </div>
 
                     <div class="info-card">
-                        <div class="info-icon"><img src="icons/chat.png" alt="Support" width="32" height="32"></div>
+                        <!-- <div class="info-icon"><img src="icons/chat.png" alt="Support" width="32" height="32"></div> -->
+                        <div class="info-icon" id="animated-icon-25" style="width:24; height:24;"></div>
+                        <script>
+                            lottie.loadAnimation({
+                                container: document.getElementById('animated-icon-25'), // the DOM element
+                                renderer: 'svg', // or 'canvas'
+                                loop: true,
+                                autoplay: true,
+                                path: 'lotti-icons/Service.json' // URL to your .json file
+                            });
+                        </script>
                         <h3>Support</h3>
                         <p>Need help with your account?</p>
                         <a href="mailto:mustaphaaliyu616@gmail.com">support@ryzonpay.com</a>
                     </div>
 
                     <div class="info-card">
-                        <div class="info-icon"><img src="icons/earth.png" alt="Follow Us" width="32" height="32"></div>
+                        <!-- <div class="info-icon"><img src="icons/earth.png" alt="Follow Us" width="32" height="32"></div> -->
+                        <div class="info-icon" id="animated-icon-26" style="width:24; height:24;"></div>
+                        <script>
+                            lottie.loadAnimation({
+                                container: document.getElementById('animated-icon-26'), // the DOM element
+                                renderer: 'svg', // or 'canvas'
+                                loop: true,
+                                autoplay: true,
+                                path: 'lotti-icons/globe.json' // URL to your .json file
+                            });
+                        </script>
                         <h3>Follow Us</h3>
                         <p>Stay connected on social media</p>
                         <div class="social-links">

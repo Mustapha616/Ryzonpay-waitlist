@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Ryzon - Revolutionizing African Fintech</title>
+    <script src="https://unpkg.com/lottie-web@5.7.4/build/player/lottie.min.js"></script>
     <style>
         * {
             margin: 0;
@@ -148,16 +149,16 @@
         }
 
         .mission-icon {
-            width: 4rem;
-            height: 4rem;
-            background: var(--gradient-primary);
+            padding: 0.5rem;
+            width: 4.5rem;
+            height: 4.5rem;
+            background: hsla(217, 91%, 60%, 0.1);
             border-radius: 1rem;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: white;
+            color: var(--color-primary);
             margin-bottom: 1.5rem;
-            font-size: 2rem;
         }
 
         .mission-card h3 {
@@ -650,19 +651,49 @@
         <div class="container">
             <div class="mission-grid">
                 <div class="mission-card">
-                    <div class="mission-icon"><img src="icons/target.png" alt="Rise On target" width="32" height="32"></div>
+                    <!-- <div class="mission-icon"><img src="icons/target.png" alt="Rise On target" width="32" height="32"></div> -->
+                    <div class="mission-icon" id="animated-icon-7" style="width:24; height:24;"></div>
+                    <script>
+                        lottie.loadAnimation({
+                            container: document.getElementById('animated-icon-7'), // the DOM element
+                            renderer: 'svg', // or 'canvas'
+                            loop: true,
+                            autoplay: true,
+                            path: 'lotti-icons/Goal.json' // URL to your .json file
+                        });
+                    </script>
                     <h3>Our Mission</h3>
                     <p>To create a unified financial ecosystem that empowers every African to access, manage, and grow their wealth seamlessly, regardless of location or connectivity.</p>
                 </div>
 
                 <div class="mission-card">
-                    <div class="mission-icon"><img src="icons/vision.png" alt="Rise On Vision" width="32" height="32"></div>
+                    <!-- <div class="mission-icon"><img src="icons/vision.png" alt="Rise On Vision" width="32" height="32"></div> -->
+                    <div class="mission-icon" id="animated-icon-8" style="width:24; height:24;"></div>
+                    <script>
+                        lottie.loadAnimation({
+                            container: document.getElementById('animated-icon-8'), // the DOM element
+                            renderer: 'svg', // or 'canvas'
+                            loop: true,
+                            autoplay: true,
+                            path: 'lotti-icons/Eye.json' // URL to your .json file
+                        });
+                    </script>
                     <h3>Our Vision</h3>
                     <p>A future where financial barriers no longer exist—where every African has equal access to world-class financial services through one simple, powerful platform.</p>
                 </div>
 
                 <div class="mission-card">
-                    <div class="mission-icon"><img src="icons/flash.png" alt="Rise On flash" width="32" height="32"></div>
+                    <!-- <div class="mission-icon"><img src="icons/flash.png" alt="Rise On flash" width="32" height="32"></div> -->
+                    <div class="mission-icon" id="animated-icon-9" style="width:24; height:24;"></div>
+                    <script>
+                        lottie.loadAnimation({
+                            container: document.getElementById('animated-icon-9'), // the DOM element
+                            renderer: 'svg', // or 'canvas'
+                            loop: true,
+                            autoplay: true,
+                            path: 'lotti-icons/Target-Audience.json' // URL to your .json file
+                        });
+                    </script>
                     <h3>Our Impact</h3>
                     <p>Breaking down silos in African fintech, reducing transaction friction, and enabling millions to participate fully in the digital economy.</p>
                 </div>

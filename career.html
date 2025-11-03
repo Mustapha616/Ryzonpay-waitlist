@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Careers at Ryzon - Build Africa's Financial Future</title>
+    <script src="https://unpkg.com/lottie-web@5.7.4/build/player/lottie.min.js"></script>
     <style>
         * {
             margin: 0;
@@ -209,8 +210,9 @@
         }
 
         .perk-icon {
-            width: 3.5rem;
-            height: 3.5rem;
+            padding: 0.5rem;
+            width: 4.5rem;
+            height: 4.5rem;
             background: hsla(217, 91%, 60%, 0.1);
             border-radius: 1rem;
             display: flex;
@@ -258,8 +260,18 @@
         }
 
         .culture-emoji {
-            font-size: 3rem;
-            margin-bottom: 1rem;
+            /* font-size: 3rem;
+            margin-bottom: 1rem; */
+            width: 4.5rem;
+            height: 4.5rem;
+            background: hsla(217, 91%, 60%, 0.1);
+            border-radius: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.75rem;
+            margin-bottom: 1.5rem;
+            padding: 0.5rem;
         }
 
         .culture-card h3 {
@@ -889,49 +901,129 @@
 
             <div class="perks-grid">
                 <div class="perk-card">
-                    <div class="perk-icon"><img src="icons/salary.png" alt="Rise On Income" width="32" height="32"></div>
+                    <!-- <div class="perk-icon"><img src="icons/salary.png" alt="Rise On Income" width="32" height="32"></div> -->
+                     <div class="perk-icon" id="animated-icon-10" style="width:24; height:24;"></div>
+                        <script>
+                            lottie.loadAnimation({
+                                container: document.getElementById('animated-icon-10'), // the DOM element
+                                renderer: 'svg', // or 'canvas'
+                                loop: true,
+                                autoplay: true,
+                                path: 'lotti-icons/Income.json' // URL to your .json file
+                            });
+                        </script>
                     <h3>Competitive Salary</h3>
                     <p>Market-leading compensation packages with equity options for full-time employees.</p>
                 </div>
 
                 <div class="perk-card">
-                    <div class="perk-icon"><img src="icons/health-report.png" alt="Rise On Wellness" width="32" height="32"></div>
+                    <!-- <div class="perk-icon"><img src="icons/health-report.png" alt="Rise On Wellness" width="32" height="32"></div> -->
+                    <div class="perk-icon" id="animated-icon-11" style="width:24; height:24;"></div>
+                        <script>
+                            lottie.loadAnimation({
+                                container: document.getElementById('animated-icon-11'), // the DOM element
+                                renderer: 'svg', // or 'canvas'
+                                loop: true,
+                                autoplay: true,
+                                path: 'lotti-icons/Doctor-Health.json' // URL to your .json file
+                            });
+                        </script>
                     <h3>Health & Wellness</h3>
                     <p>Comprehensive health insurance for you and your family, plus wellness stipends.</p>
                 </div>
 
                 <div class="perk-card">
-                    <div class="perk-icon"><img src="icons/earth.png" alt="Rise On Remotely" width="32" height="32"></div>
+                    <!-- <div class="perk-icon"><img src="icons/earth.png" alt="Rise On Remotely" width="32" height="32"></div> -->
+                    <div class="perk-icon" id="animated-icon-12" style="width:24; height:24;"></div>
+                        <script>
+                            lottie.loadAnimation({
+                                container: document.getElementById('animated-icon-12'), // the DOM element
+                                renderer: 'svg', // or 'canvas'
+                                loop: true,
+                                autoplay: true,
+                                path: 'lotti-icons/globe.json' // URL to your .json file
+                            });
+                        </script>
                     <h3>Remote Friendly</h3>
                     <p>Work from anywhere in Africa with flexible hours and async-first communication.</p>
                 </div>
 
                 <div class="perk-card">
-                    <div class="perk-icon">📚</div>
+                    <!-- <div class="perk-icon">📚</div> -->
+                     <div class="perk-icon" id="animated-icon-13" style="width:24; height:24;"></div>
+                        <script>
+                            lottie.loadAnimation({
+                                container: document.getElementById('animated-icon-13'), // the DOM element
+                                renderer: 'svg', // or 'canvas'
+                                loop: true,
+                                autoplay: true,
+                                path: 'lotti-icons/Learn-More.json' // URL to your .json file
+                            });
+                        </script>
                     <h3>Learning Budget</h3>
                     <p>Annual budget for courses, conferences, and professional development.</p>
                 </div>
 
                 <div class="perk-card">
-                    <div class="perk-icon">🏖️</div>
+                    <!-- <div class="perk-icon">🏖️</div> -->
+                    <div class="perk-icon" id="animated-icon-14" style="width:24; height:24;"></div>
+                        <script>
+                            lottie.loadAnimation({
+                                container: document.getElementById('animated-icon-14'), // the DOM element
+                                renderer: 'svg', // or 'canvas'
+                                loop: true,
+                                autoplay: true,
+                                path: 'lotti-icons/Aromatic-Candle.json' // URL to your .json file
+                            });
+                        </script>
                     <h3>Generous PTO</h3>
                     <p>25 days paid time off plus public holidays. We believe in work-life balance.</p>
                 </div>
 
                 <div class="perk-card">
-                    <div class="perk-icon"><img src="icons/shuttle.png" alt="Rise On growth" width="32" height="32"></div>
+                    <!-- <div class="perk-icon"><img src="icons/shuttle.png" alt="Rise On growth" width="32" height="32"></div> -->
+                    <div class="perk-icon" id="animated-icon-15" style="width:24; height:24;"></div>
+                        <script>
+                            lottie.loadAnimation({
+                                container: document.getElementById('animated-icon-15'), // the DOM element
+                                renderer: 'svg', // or 'canvas'
+                                loop: true,
+                                autoplay: true,
+                                path: 'lotti-icons/Start-up-1.json' // URL to your .json file
+                            });
+                        </script>
                     <h3>Career Growth</h3>
                     <p>Clear progression paths, mentorship programs, and opportunities to lead.</p>
                 </div>
 
                 <div class="perk-card">
-                    <div class="perk-icon">👶</div>
+                    <!-- <div class="perk-icon">👶</div> -->
+                    <div class="perk-icon" id="animated-icon-16" style="width:24; height:24;"></div>
+                        <script>
+                            lottie.loadAnimation({
+                                container: document.getElementById('animated-icon-16'), // the DOM element
+                                renderer: 'svg', // or 'canvas'
+                                loop: true,
+                                autoplay: true,
+                                path: 'lotti-icons/Laughing.json' // URL to your .json file
+                            });
+                        </script>
                     <h3>Parental Leave</h3>
                     <p>16 weeks fully paid parental leave for all parents welcoming new children.</p>
                 </div>
 
                 <div class="perk-card">
-                    <div class="perk-icon"><img src="icons/programming.png" alt="Rise On Efficiency" width="32" height="32"></div>
+                    <!-- <div class="perk-icon"><img src="icons/programming.png" alt="Rise On Efficiency" width="32" height="32"></div> -->
+                    <div class="perk-icon" id="animated-icon-17" style="width:24; height:24;"></div>
+                        <script>
+                            lottie.loadAnimation({
+                                container: document.getElementById('animated-icon-17'), // the DOM element
+                                renderer: 'svg', // or 'canvas'
+                                loop: true,
+                                autoplay: true,
+                                path: 'lotti-icons/Settings.json' // URL to your .json file
+                            });
+                        </script>
                     <h3>Latest Equipment</h3>
                     <p>Top-tier laptop, accessories, and home office setup to help you do your best work.</p>
                 </div>
@@ -949,25 +1041,65 @@
 
             <div class="culture-grid">
                 <div class="culture-card">
-                    <div class="culture-emoji"><img src="icons/target.png" alt="Rise On Mission" width="48" height="48"></div>
+                    <!-- <div class="culture-emoji"><img src="icons/target.png" alt="Rise On Mission" width="48" height="48"></div> -->
+                    <div class="culture-emoji" id="animated-icon-18" style="width:24; height:24;"></div>
+                        <script>
+                            lottie.loadAnimation({
+                                container: document.getElementById('animated-icon-18'), // the DOM element
+                                renderer: 'svg', // or 'canvas'
+                                loop: true,
+                                autoplay: true,
+                                path: 'lotti-icons/Goal.json' // URL to your .json file
+                            });
+                        </script>
                     <h3>Mission-Driven</h3>
                     <p>We're not just building a product—we're creating financial inclusion for millions of Africans. Every line of code has purpose.</p>
                 </div>
 
                 <div class="culture-card">
-                    <div class="culture-emoji"><img src="icons/united.png" alt="Rise On Unity" width="48" height="48"></div>
+                    <!-- <div class="culture-emoji"><img src="icons/united.png" alt="Rise On Unity" width="48" height="48"></div> -->
+                    <div class="culture-emoji" id="animated-icon-19" style="width:24; height:24;"></div>
+                        <script>
+                            lottie.loadAnimation({
+                                container: document.getElementById('animated-icon-19'), // the DOM element
+                                renderer: 'svg', // or 'canvas'
+                                loop: true,
+                                autoplay: true,
+                                path: 'lotti-icons/Handshake.json' // URL to your .json file
+                            });
+                        </script>
                     <h3>Collaborative Spirit</h3>
                     <p>Great ideas come from anywhere. We foster an environment where every voice matters and teamwork thrives.</p>
                 </div>
 
                 <div class="culture-card">
-                    <div class="culture-emoji"><img src="icons/flash.png" alt="Rise On fast" width="48" height="48"></div>
+                    <!-- <div class="culture-emoji"><img src="icons/flash.png" alt="Rise On fast" width="48" height="48"></div> -->
+                    <div class="culture-emoji" id="animated-icon-20" style="width:24; height:24;"></div>
+                        <script>
+                            lottie.loadAnimation({
+                                container: document.getElementById('animated-icon-20'), // the DOM element
+                                renderer: 'svg', // or 'canvas'
+                                loop: true,
+                                autoplay: true,
+                                path: 'lotti-icons/Fast-Delivery.json' // URL to your .json file
+                            });
+                        </script>
                     <h3>Move Fast</h3>
                     <p>We ship quickly, iterate constantly, and learn from everything. Speed and quality aren't mutually exclusive.</p>
                 </div>
 
                 <div class="culture-card">
-                    <div class="culture-emoji"><img src="icons/plant.png" alt="Rise On growth" width="48" height="48"></div>
+                    <!-- <div class="culture-emoji"><img src="icons/plant.png" alt="Rise On growth" width="48" height="48"></div> -->
+                    <div class="culture-emoji" id="animated-icon-21" style="width:24; height:24;"></div>
+                        <script>
+                            lottie.loadAnimation({
+                                container: document.getElementById('animated-icon-21'), // the DOM element
+                                renderer: 'svg', // or 'canvas'
+                                loop: true,
+                                autoplay: true,
+                                path: 'lotti-icons/Growth.json' // URL to your .json file
+                            });
+                        </script>
                     <h3>Growth Mindset</h3>
                     <p>We're always learning, always improving. Mistakes are learning opportunities, and curiosity is celebrated.</p>
                 </div>
