@@ -1,0 +1,1410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Careers at Ryzon - Build Africa's Financial Future</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --color-primary: hsl(217, 91%, 60%);
+            --color-primary-dark: hsl(217, 91%, 45%);
+            --color-background: hsl(0, 0%, 100%);
+            --color-foreground: hsl(220, 20%, 10%);
+            --color-secondary: hsl(220, 14%, 96%);
+            --color-muted: hsl(220, 9%, 46%);
+            --color-success: hsl(142, 76%, 36%);
+            --color-border: hsl(220, 13%, 91%);
+            --gradient-primary: linear-gradient(135deg, hsl(217, 91%, 60%) 0%, hsl(217, 91%, 70%) 100%);
+            --shadow-md: 0 4px 16px hsla(217, 91%, 60%, 0.12);
+            --shadow-lg: 0 8px 32px hsla(217, 91%, 60%, 0.16);
+            --shadow-glow: 0 0 40px hsla(217, 91%, 60%, 0.3);
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+            color: var(--color-foreground);
+            background: var(--color-background);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        /* Navigation */
+        nav {
+            padding: 1.5rem 0;
+            background: white;
+            border-bottom: 1px solid var(--color-border);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.95);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-link {
+            color: var(--color-primary);
+            text-decoration: none;
+            font-weight: 600;
+            transition: opacity 0.3s;
+        }
+
+        .nav-link:hover {
+            opacity: 0.7;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 6rem 0 4rem;
+            background: linear-gradient(180deg, var(--color-secondary) 0%, var(--color-background) 100%);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, hsla(217, 91%, 60%, 0.1) 0%, transparent 70%);
+            animation: pulse 15s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background: hsla(217, 91%, 60%, 0.1);
+            color: var(--color-primary);
+            font-weight: 600;
+            border-radius: 9999px;
+            margin-bottom: 1.5rem;
+            animation: fadeIn 0.6s ease-out;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            animation: fadeIn 0.8s ease-out;
+        }
+
+        .gradient-text {
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--color-muted);
+            max-width: 48rem;
+            margin: 0 auto 2rem;
+            animation: fadeIn 1s ease-out;
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+            margin-top: 3rem;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--color-primary);
+            display: block;
+        }
+
+        .stat-label {
+            color: var(--color-muted);
+            font-size: 0.875rem;
+        }
+
+        /* Perks Section */
+        .perks {
+            padding: 6rem 0;
+            background: var(--color-background);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .section-subtitle {
+            font-size: 1.25rem;
+            color: var(--color-muted);
+        }
+
+        .perks-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .perk-card {
+            padding: 2rem;
+            background: white;
+            border: 2px solid var(--color-border);
+            border-radius: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .perk-card:hover {
+            border-color: var(--color-primary);
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-4px);
+        }
+
+        .perk-icon {
+            width: 3.5rem;
+            height: 3.5rem;
+            background: hsla(217, 91%, 60%, 0.1);
+            border-radius: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.75rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .perk-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .perk-card p {
+            color: var(--color-muted);
+            line-height: 1.6;
+        }
+
+        /* Culture Section */
+        .culture {
+            padding: 6rem 0;
+            background: linear-gradient(to bottom, var(--color-background), var(--color-secondary));
+        }
+
+        .culture-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .culture-card {
+            padding: 2.5rem;
+            background: white;
+            border-radius: 1rem;
+            border: 2px solid var(--color-border);
+            transition: all 0.3s ease;
+        }
+
+        .culture-card:hover {
+            border-color: var(--color-primary);
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-4px);
+        }
+
+        .culture-emoji {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .culture-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .culture-card p {
+            color: var(--color-muted);
+            line-height: 1.7;
+        }
+
+        /* Jobs Section */
+        .jobs {
+            padding: 6rem 0;
+            background: var(--color-background);
+        }
+
+        .jobs-list {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .job-card {
+            background: white;
+            border: 2px solid var(--color-border);
+            border-radius: 1rem;
+            padding: 2rem;
+            margin-bottom: 1.5rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .job-card:hover {
+            border-color: var(--color-primary);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 1rem;
+            gap: 1rem;
+        }
+
+        .job-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .job-department {
+            color: var(--color-primary);
+            font-weight: 600;
+            font-size: 0.875rem;
+        }
+
+        .job-badge {
+            background: hsla(356, 91%, 60%, 0.1);
+            color: red;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        .job-meta {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            font-size: 0.875rem;
+            color: var(--color-muted);
+            margin-bottom: 1rem;
+        }
+
+        .job-meta-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .job-description {
+            color: var(--color-muted);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .job-tags {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            background: var(--color-secondary);
+            color: var(--color-foreground);
+            padding: 0.25rem 0.75rem;
+            border-radius: 0.25rem;
+            font-size: 0.75rem;
+            font-weight: 500;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            padding: 0.75rem 2rem;
+            font-size: 1.125rem;
+            font-weight: 600;
+            border-radius: 0.5rem;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            background: var(--gradient-primary);
+            color: white;
+            box-shadow: var(--shadow-glow);
+        }
+
+        .btn:hover {
+            opacity: 0.9;
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--color-primary);
+            border: 2px solid var(--color-primary);
+            box-shadow: none;
+        }
+
+        .btn-outline:hover {
+            background: hsla(217, 91%, 60%, 0.1);
+        }
+
+        /* CTA Section */
+        .cta {
+            padding: 6rem 0;
+            background: linear-gradient(135deg, var(--color-primary) 0%, hsl(217, 91%, 45%) 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .cta h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .cta p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .cta .btn {
+            background: white;
+            color: var(--color-primary);
+        }
+
+        .cta .btn:hover {
+            background: var(--color-secondary);
+        }
+
+        /* Footer */
+        footer {
+            padding: 3rem 0;
+            background: var(--color-foreground);
+            color: var(--color-background);
+            text-align: center;
+        }
+
+        footer p {
+            color: hsla(0, 0%, 100%, 0.8);
+        }
+
+        /* Modal */
+        /* .modall {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+            }
+
+            .modall-content {
+            background-color: #fff;
+            margin: 15% auto;
+            padding: 20px;
+            border-radius: 8px;
+            width: 80%;
+            max-width: 400px;
+            text-align: center;
+            }
+
+            .close {
+            float: right;
+            font-size: 24px;
+            font-weight: bold;
+            cursor: pointer;
+} */
+        
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            /* height: 100vh; */
+            /* display: flex; */
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 1000;
+            padding: 2rem;
+            overflow-y: auto;
+        }
+
+        .modal.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-content {
+            background: white;
+            border-radius: 1rem;
+            padding: 3rem;
+            max-width: 600px;
+            width: 100%;
+            height: 90vh;
+            margin: auto;
+            overflow-y: auto;
+            scrollbar-width: none;
+            position: relative;
+            animation: slideUp 0.3s ease-out;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            background: var(--color-secondary);
+            border: none;
+            width: 2rem;
+            height: 2rem;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.25rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.3s;
+        }
+
+        .modal-close:hover {
+            background: var(--color-border);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .form-input,
+        .form-textarea {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            font-size: 1rem;
+            border: 2px solid var(--color-border);
+            border-radius: 0.5rem;
+            transition: border-color 0.3s;
+            font-family: inherit;
+        }
+
+        .form-input:focus,
+        .form-textarea:focus {
+            outline: none;
+            border-color: var(--color-primary);
+        }
+
+        .form-textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 1.25rem;
+            }
+
+            nav {
+                padding: 1rem 0;
+            }
+
+            .logo {
+                font-size: 1.25rem;
+            }
+
+            .nav-link {
+                font-size: 0.9rem;
+            }
+
+            .hero {
+                padding: 4rem 0 3rem;
+            }
+
+            .hero-badge {
+                font-size: 0.875rem;
+                padding: 0.4rem 0.875rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+                line-height: 1.3;
+            }
+
+            .hero p {
+                font-size: 1rem;
+                padding: 0 0.5rem;
+            }
+
+            .hero-stats {
+                gap: 1.5rem;
+                margin-top: 2rem;
+            }
+
+            .stat-number {
+                font-size: 2rem;
+            }
+
+            .stat-label {
+                font-size: 0.8rem;
+            }
+
+            .perks,
+            .culture,
+            .jobs,
+            .cta {
+                padding: 3.5rem 0;
+            }
+
+            .section-header {
+                margin-bottom: 2.5rem;
+            }
+
+            .section-header h2,
+            .cta h2 {
+                font-size: 1.875rem;
+            }
+
+            .section-subtitle {
+                font-size: 1.125rem;
+                padding: 0 1rem;
+            }
+
+            .perks-grid,
+            .culture-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .perk-card,
+            .culture-card {
+                padding: 1.75rem;
+            }
+
+            .perk-icon {
+                width: 3rem;
+                height: 3rem;
+                font-size: 1.5rem;
+            }
+
+            .culture-emoji {
+                font-size: 2.5rem;
+            }
+
+            .job-card {
+                padding: 1.5rem;
+                margin-bottom: 1rem;
+            }
+
+            .job-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .job-title {
+                font-size: 1.25rem;
+            }
+
+            .job-badge {
+                align-self: flex-start;
+            }
+
+            .job-meta {
+                gap: 1rem;
+            }
+
+            .job-meta-item {
+                font-size: 0.8rem;
+            }
+
+            .cta p {
+                font-size: 1.125rem;
+                padding: 0 1rem;
+            }
+
+            .btn {
+                padding: 0.875rem 1.75rem;
+                font-size: 1rem;
+                width: 100%;
+                max-width: 300px;
+            }
+
+            .modal {
+                padding: 1rem;
+            }
+
+            .modal-content {
+                padding: 2rem 1.5rem;
+                max-height: 85vh;
+            }
+
+            .modal-close {
+                top: 1rem;
+                right: 1rem;
+                width: 1.75rem;
+                height: 1.75rem;
+                font-size: 1rem;
+            }
+
+            .form-group {
+                margin-bottom: 1.25rem;
+            }
+
+            .form-input,
+            .form-textarea {
+                padding: 0.625rem 0.875rem;
+                font-size: 0.95rem;
+            }
+
+            footer {
+                padding: 2rem 0;
+            }
+
+            footer p {
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 1.75rem;
+            }
+
+            .hero p {
+                font-size: 0.95rem;
+            }
+
+            .hero-stats {
+                gap: 1rem;
+            }
+
+            .stat-number {
+                font-size: 1.75rem;
+            }
+
+            .section-header h2,
+            .cta h2 {
+                font-size: 1.625rem;
+            }
+
+            .perk-card h3,
+            .culture-card h3 {
+                font-size: 1.125rem;
+            }
+
+            .job-title {
+                font-size: 1.125rem;
+            }
+
+            .job-tags {
+                gap: 0.375rem;
+            }
+
+            .tag {
+                font-size: 0.7rem;
+                padding: 0.2rem 0.6rem;
+            }
+        }
+
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .hero h1 {
+                font-size: 3rem;
+            }
+
+            .perks-grid,
+            .culture-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 1025px) {
+            .hero h1 {
+                font-size: 4.5rem;
+            }
+        }
+
+        /* Responsive */
+        /* @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .section-header h2,
+            .cta h2 {
+                font-size: 2rem;
+            }
+
+            .hero-stats {
+                gap: 1.5rem;
+            }
+
+            .stat-number {
+                font-size: 2rem;
+            }
+
+            .job-header {
+                flex-direction: column;
+            }
+
+            .modal-content {
+                padding: 2rem 1.5rem;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .hero h1 {
+                font-size: 4.5rem;
+            }
+        } */
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <div class="nav-container">
+                <div class="logo"><a href="index.html">Ryzon</a></div>
+                <a href="index.html" class="nav-link">← Back to Home</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="container">
+                <div class="hero-badge"><img src="icons/suitcase.png" alt="Rise On Careers" width="16" height="16"> Join Our Team</div>
+                <h1>Build Africa's <span class="gradient-text">Financial Future</span></h1>
+                <p>Join a team of innovators, dreamers, and builders creating the financial infrastructure that Africa deserves.</p>
+                
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">4+</span>
+                        <span class="stat-label">Team Members</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">0</span>
+                        <span class="stat-label">Open Positions</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">1</span>
+                        <span class="stat-label">Country</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Perks Section -->
+    <section class="perks">
+        <div class="container">
+            <div class="section-header">
+                <h2>Why <span class="gradient-text">Ryzon</span>?</h2>
+                <p class="section-subtitle">Competitive benefits and a culture that puts you first</p>
+            </div>
+
+            <div class="perks-grid">
+                <div class="perk-card">
+                    <div class="perk-icon"><img src="icons/salary.png" alt="Rise On Income" width="32" height="32"></div>
+                    <h3>Competitive Salary</h3>
+                    <p>Market-leading compensation packages with equity options for full-time employees.</p>
+                </div>
+
+                <div class="perk-card">
+                    <div class="perk-icon"><img src="icons/health-report.png" alt="Rise On Wellness" width="32" height="32"></div>
+                    <h3>Health & Wellness</h3>
+                    <p>Comprehensive health insurance for you and your family, plus wellness stipends.</p>
+                </div>
+
+                <div class="perk-card">
+                    <div class="perk-icon"><img src="icons/earth.png" alt="Rise On Remotely" width="32" height="32"></div>
+                    <h3>Remote Friendly</h3>
+                    <p>Work from anywhere in Africa with flexible hours and async-first communication.</p>
+                </div>
+
+                <div class="perk-card">
+                    <div class="perk-icon">📚</div>
+                    <h3>Learning Budget</h3>
+                    <p>Annual budget for courses, conferences, and professional development.</p>
+                </div>
+
+                <div class="perk-card">
+                    <div class="perk-icon">🏖️</div>
+                    <h3>Generous PTO</h3>
+                    <p>25 days paid time off plus public holidays. We believe in work-life balance.</p>
+                </div>
+
+                <div class="perk-card">
+                    <div class="perk-icon"><img src="icons/shuttle.png" alt="Rise On growth" width="32" height="32"></div>
+                    <h3>Career Growth</h3>
+                    <p>Clear progression paths, mentorship programs, and opportunities to lead.</p>
+                </div>
+
+                <div class="perk-card">
+                    <div class="perk-icon">👶</div>
+                    <h3>Parental Leave</h3>
+                    <p>16 weeks fully paid parental leave for all parents welcoming new children.</p>
+                </div>
+
+                <div class="perk-card">
+                    <div class="perk-icon"><img src="icons/programming.png" alt="Rise On Efficiency" width="32" height="32"></div>
+                    <h3>Latest Equipment</h3>
+                    <p>Top-tier laptop, accessories, and home office setup to help you do your best work.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Culture Section -->
+    <section class="culture">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our <span class="gradient-text">Culture</span></h2>
+                <p class="section-subtitle">Values that drive everything we do</p>
+            </div>
+
+            <div class="culture-grid">
+                <div class="culture-card">
+                    <div class="culture-emoji"><img src="icons/target.png" alt="Rise On Mission" width="48" height="48"></div>
+                    <h3>Mission-Driven</h3>
+                    <p>We're not just building a product—we're creating financial inclusion for millions of Africans. Every line of code has purpose.</p>
+                </div>
+
+                <div class="culture-card">
+                    <div class="culture-emoji"><img src="icons/united.png" alt="Rise On Unity" width="48" height="48"></div>
+                    <h3>Collaborative Spirit</h3>
+                    <p>Great ideas come from anywhere. We foster an environment where every voice matters and teamwork thrives.</p>
+                </div>
+
+                <div class="culture-card">
+                    <div class="culture-emoji"><img src="icons/flash.png" alt="Rise On fast" width="48" height="48"></div>
+                    <h3>Move Fast</h3>
+                    <p>We ship quickly, iterate constantly, and learn from everything. Speed and quality aren't mutually exclusive.</p>
+                </div>
+
+                <div class="culture-card">
+                    <div class="culture-emoji"><img src="icons/plant.png" alt="Rise On growth" width="48" height="48"></div>
+                    <h3>Growth Mindset</h3>
+                    <p>We're always learning, always improving. Mistakes are learning opportunities, and curiosity is celebrated.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Jobs Section -->
+    <section class="jobs">
+        <div class="container">
+            <div class="section-header">
+                <h2><span class="gradient-text">Open Positions</span></h2>
+                <p class="section-subtitle">Find your next opportunity</p>
+            </div>
+
+            <div class="jobs-list">
+                <div class="job-card" onclick="openModal('Senior Backend Engineer')">
+                    <div class="job-header">
+                        <div>
+                            <h3 class="job-title">Senior Backend Engineer</h3>
+                            <p class="job-department">Engineering</p>
+                        </div>
+                        <span class="job-badge">Not opened</span>
+                    </div>
+                    <div class="job-meta">
+                        <span class="job-meta-item"><img src="icons/pin.png" alt="Remotely" width="16" height="16"> Remote (Nigeria)</span>
+                        <span class="job-meta-item"><img src="icons/salary.png" alt="Remotely" width="16" height="16"> Competitive</span>
+                        <!-- <span class="job-meta-item">⏰ Posted 2 days ago</span> -->
+                    </div>
+                    <p class="job-description">
+                        Build scalable APIs and services that power millions of transactions. Work with Node.js, PostgreSQL, and modern cloud infrastructure.
+                    </p>
+                    <div class="job-tags">
+                        <span class="tag">Node.js</span>
+                        <span class="tag">PostgreSQL</span>
+                        <span class="tag">AWS</span>
+                        <span class="tag">Microservices</span>
+                    </div>
+                </div>
+
+                <!-- <div class="job-card" onclick="openModal('Product Designer')">
+                    <div class="job-header">
+                        <div>
+                            <h3 class="job-title">Product Designer</h3>
+                            <p class="job-department">Design</p>
+                        </div>
+                        <span class="job-badge">Full-time</span>
+                    </div>
+                    <div class="job-meta">
+                        <span class="job-meta-item"><img src="icons/pin.png" alt="Remotely" width="16" height="16"> Lagos, Nigeria</span>
+                        <span class="job-meta-item"><img src="icons/salary.png" alt="Remotely" width="16" height="16"> Competitive</span>
+                        <span class="job-meta-item">⏰ Posted 5 days ago</span>
+                    </div>
+                    <p class="job-description">
+                        Craft delightful user experiences for our mobile and web apps. Own the design process from research to final implementation.
+                    </p>
+                    <div class="job-tags">
+                        <span class="tag">Figma</span>
+                        <span class="tag">Mobile Design</span>
+                        <span class="tag">User Research</span>
+                        <span class="tag">Prototyping</span>
+                    </div>
+                </div> -->
+
+                <div class="job-card" onclick="openModal('Mobile Engineer (Flutter)')">
+                    <div class="job-header">
+                        <div>
+                            <h3 class="job-title">Mobile Engineer (Flutter)</h3>
+                            <p class="job-department">Engineering</p>
+                        </div>
+                        <span class="job-badge">Not opened</span>
+                    </div>
+                    <div class="job-meta">
+                        <span class="job-meta-item"><img src="icons/pin.png" alt="Remotely" width="16" height="16"> Remote (Nigeria)</span>
+                        <span class="job-meta-item"><img src="icons/salary.png" alt="Remotely" width="16" height="16"> Competitive</span>
+                        <!-- <span class="job-meta-item">⏰ Posted 1 week ago</span> -->
+                    </div>
+                    <p class="job-description">
+                        Build beautiful, performant mobile experiences with React Native. Ship features that millions will use daily.
+                    </p>
+                    <div class="job-tags">
+                        <span class="tag">Dart</span>
+                        <span class="tag">Flutter</span>
+                        <span class="tag">Bloc State Management</span>
+                        <span class="tag">iOS</span>
+                        <span class="tag">Android</span>
+                    </div>
+                </div>
+
+                <div class="job-card" onclick="openModal('Head of Strategy & Operations')">
+                    <div class="job-header">
+                        <div>
+                            <h3 class="job-title">Head of Strategy & Operations</h3>
+                            <p class="job-department">Operations</p>
+                        </div>
+                        <span class="job-badge">Not opened</span>
+                    </div>
+                    <div class="job-meta">
+                        <span class="job-meta-item"><img src="icons/pin.png" alt="Remotely" width="16" height="16"> Remote (Nigeria)</span>
+                        <span class="job-meta-item"><img src="icons/salary.png" alt="Remotely" width="16" height="16"> Competitive</span>
+                        <!-- <span class="job-meta-item">⏰ Posted 3 days ago</span> -->
+                    </div>
+                    <p class="job-description">
+                        Lead and manage operations, goals, and key relationships with banks, regulators, and vendors; ensure compliance with fintech regulations (e.g., CBN); and build robust systems for KYC, risk management, reconciliation, and customer support.
+                    </p>
+                    <div class="job-tags">
+                        <span class="tag">Fintech</span>
+                        <span class="tag">Regulatory</span>
+                        <span class="tag">KYC/AML</span>
+                        <span class="tag">Leadership</span>
+                    </div>
+                </div>
+
+                <div class="job-card" onclick="openModal('Head of Compliance')">
+                    <div class="job-header">
+                        <div>
+                            <h3 class="job-title">Head of Compliance</h3>
+                            <p class="job-department">Legal & Compliance</p>
+                        </div>
+                        <span class="job-badge">Not opened</span>
+                    </div>
+                    <div class="job-meta">
+                        <span class="job-meta-item"><img src="icons/pin.png" alt="Remotely" width="16" height="16"> Remote (Nigeria)</span>
+                        <span class="job-meta-item"><img src="icons/salary.png" alt="Remotely" width="16" height="16"> Competitive</span>
+                        <!-- <span class="job-meta-item">⏰ Posted 3 days ago</span> -->
+                    </div>
+                    <p class="job-description">
+                        Lead our compliance strategy across African markets. Ensure we meet regulatory requirements while maintaining user experience.
+                    </p>
+                    <div class="job-tags">
+                        <span class="tag">Fintech</span>
+                        <span class="tag">Regulatory</span>
+                        <span class="tag">KYC/AML</span>
+                        <span class="tag">Leadership</span>
+                    </div>
+                </div>
+
+                <div class="job-card" onclick="openModal('Marketing Manager')">
+                    <div class="job-header">
+                        <div>
+                            <h3 class="job-title">Marketing Manager</h3>
+                            <p class="job-department">Marketing</p>
+                        </div>
+                        <span class="job-badge">Not opened</span>
+                    </div>
+                    <div class="job-meta">
+                        <span class="job-meta-item"><img src="icons/pin.png" alt="Remotely" width="16" height="16"> Remote (Africa)</span>
+                        <span class="job-meta-item"><img src="icons/salary.png" alt="Remotely" width="16" height="16"> Competitive</span>
+                        <!-- <span class="job-meta-item">⏰ Posted 4 days ago</span> -->
+                    </div>
+                    <p class="job-description">
+                        Drive our growth strategy across digital channels. Build campaigns that resonate with African audiences.
+                    </p>
+                    <div class="job-tags">
+                        <span class="tag">Digital Marketing</span>
+                        <span class="tag">Growth</span>
+                        <span class="tag">Content</span>
+                        <span class="tag">Analytics</span>
+                    </div>
+                </div>
+
+                <div class="job-card" onclick="openModal('DevOps Engineer')">
+                    <div class="job-header">
+                        <div>
+                            <h3 class="job-title">DevOps Engineer</h3>
+                            <p class="job-department">Engineering</p>
+                        </div>
+                        <span class="job-badge">Not opened</span>
+                    </div>
+                    <div class="job-meta">
+                        <span class="job-meta-item"><img src="icons/pin.png" alt="Remotely" width="16" height="16"> Remote (Nigeria)</span>
+                        <span class="job-meta-item"><img src="icons/salary.png" alt="Remotely" width="16" height="16"> Competitive</span>
+                        <!-- <span class="job-meta-item">⏰ Posted 6 days ago</span> -->
+                    </div>
+                    <p class="job-description">
+                        Build and maintain our infrastructure. Ensure 99.99% uptime for millions of users across the continent.
+                    </p>
+                    <div class="job-tags">
+                        <span class="tag">AWS</span>
+                        <span class="tag">Docker</span>
+                        <span class="tag">Kubernetes</span>
+                        <span class="tag">CI/CD</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <h2>Don't See Your Role?</h2>
+            <p>We're always looking for exceptional talent. Send us your resume and let's talk!</p>
+            <button class="btn" onclick= "alert('We\'re not currently accepting applications.')"> General Application</button>
+            <!-- This is the original on click onclick="openModal('General Application')"> -->
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Duella. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- <div id="generalAppModal" class="gmodal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('generalAppModal')">&times;</span>
+            <h2>Applications Closed</h2>
+            <p>We're not currently accepting applications. Please check back later!</p>
+        </div>
+    </div> -->
+
+    <!-- Application Modal -->
+    <div id="applicationModal" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal()">×</button>
+            <h2 style="margin-bottom: 0.5rem;">Apply for <span class="gradient-text" id="modalJobTitle">Position</span></h2>
+            <p style="color: var(--color-muted); margin-bottom: 2rem;">Fill out the form below and we'll get back to you soon.</p>
+            
+            <form id="applicationForm" onsubmit="handleSubmit(event)">
+                <div class="form-group">
+                    <label class="form-label">Full Name *</label>
+                    <input type="text" class="form-input" required placeholder="John Doe">
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Email Address *</label>
+                    <input type="email" class="form-input" required placeholder="Khalil@example.com">
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Phone Number *</label>
+                    <input type="tel" class="form-input" required placeholder="+234 XXX XXX XXXX" minlength="10" maxlength="11" inputmode="numeric" pattern="^(90|70|80|91|81|71|070|080|081|090|091|071)[0-9]{8}$">
+                </div>
+
+                <!-- <div class="form-group">
+                    <label class="form-label">Role *</label>
+                    <input type="tel" class="form-input" required placeholder="e.g., Senior Backend Engineer">
+                </div> -->
+                
+                <div class="form-group">
+                    <label class="form-label">Role *</label>
+                    <select class="form-input" id="roleSelect" required>
+                        <option value="" disabled selected>Select a role</option>
+                        <option value="Senior Backend Engineer">Senior Backend Engineer</option>
+                        <option value="Mobile Engineer (Flutter)">Mobile Engineer (Flutter)</option>
+                        <option value="Head of Strategy & Operations">Head of Strategy & Operations</option>
+                        <option value="Head of Compliance">Head of Compliance</option>
+                        <option value="Marketing Manager">Marketing Manager</option>
+                        <option value="DevOps Engineer">DevOps Engineer</option>
+                    </select>
+                </div>
+
+
+                <div class="form-group">
+                    <label class="form-label">LinkedIn Profile</label>
+                    <input type="url" class="form-input" placeholder="https://linkedin.com/in/yourprofile">
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Portfolio/GitHub *</label>
+                    <input type="url" class="form-input" required placeholder="https://github.com/yourusername">
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Why do you want to join Ryzon? (Min. 250 words) *</label>
+                    <textarea class="form-textarea" required placeholder="Tell us what excites you about this opportunity..."></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Resume/CV URL *</label>
+                    <input type="url" class="form-input" required placeholder="Link to your resume (Google Drive, Dropbox, etc.)">
+                </div>
+
+                <button type="submit" class="btn" style="width: 100%; margin-top: 1rem;">
+                    Submit Application
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" style="position: fixed; bottom: 2rem; right: 2rem; padding: 1rem 1.5rem; background: var(--color-success); color: white; border-radius: 0.5rem; box-shadow: var(--shadow-lg); transform: translateY(150%); opacity: 0; transition: all 0.3s ease; z-index: 1001;">
+        Application submitted successfully!
+    </div>
+
+    <script>
+        function openModal(jobTitle) {
+            const modal = document.getElementById('applicationModal');
+            const jobTitleElement = document.getElementById('modalJobTitle');
+            const roleSelect = document.getElementById('roleSelect');
+
+            // Set the modal job title text
+            jobTitleElement.textContent = jobTitle;
+
+            // Show modal
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+
+            if (jobTitle) {
+                // Opened via job card
+                modalJobTitle.textContent = jobTitle;
+
+                // Auto-select the corresponding role
+                for (let i = 0; i < roleSelect.options.length; i++) {
+                if (roleSelect.options[i].value === jobTitle) {
+                    roleSelect.selectedIndex = i;
+                    break;
+                }
+                }
+
+                // Disable the dropdown so user cannot change
+                roleSelect.disabled = true;
+            } else {
+                // Opened via general modal (not from a job card)
+                modalJobTitle.textContent = "Position"; // or generic title
+                roleSelect.selectedIndex = 0; // reset to "Select a role"
+                roleSelect.disabled = false; // make it editable
+            }
+            
+        }
+
+        function closeModal() {
+            document.getElementById('applicationModal').classList.remove('active');
+            document.body.style.overflow = 'auto';
+            document.getElementById('applicationForm').reset();
+        }
+
+        // function openModal(jobTitle) {
+        //     document.getElementById('modalJobTitle').textContent = jobTitle;
+        //     document.getElementById('applicationModal').classList.add('active');
+        //     document.body.style.overflow = 'hidden';
+          
+
+        // }
+
+        // function closeModal() {
+        //     document.getElementById('applicationModal').classList.remove('active');
+        //     document.body.style.overflow = 'auto';
+        //     document.getElementById('applicationForm').reset();
+            
+
+        // }
+
+        // function openModal(id) {
+        //     document.getElementById(id).style.display = "block";
+        // }
+
+        // function closeModal(id) {
+        //     document.getElementById(id).style.display = "none";
+        // }
+
+        // // Optional: close modal when clicking outside
+        // window.onclick = function(event) {
+        //     const modals = document.querySelectorAll('.modal');
+        //     modals.forEach(modal => {
+        //     if (event.target === modal) {
+        //         modal.style.display = "none";
+        //     }
+        //     });
+        // }
+
+
+        function handleSubmit(event) {
+            event.preventDefault();
+            
+            // Show success toast
+            // const toast = document.getElementById('toast');
+            // toast.style.transform = 'translateY(0)';
+            // toast.style.opacity = '1';
+
+            alert("We are not currently accepting applications."); // show the alert
+            
+            setTimeout(() => {
+                toast.style.transform = 'translateY(150%)';
+                toast.style.opacity = '0';
+                closeModal();
+            }, 3000);
+        }
+
+        // Close modal when clicking outside
+        document.getElementById('applicationModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeModal();
+            }
+        });
+
+        // Optional: close modal when clicking outside the content
+            // window.onclick = function(event) {
+            //     const modal = document.getElementById("generalAppModal");
+            //     if (event.target === modal) {
+            //     modal.style.display = "none";
+            //     }
+            // }
+
+
+        // Add scroll animation to cards
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.perk-card, .culture-card, .job-card').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(30px)';
+            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(card);
+        });
+
+        const phoneInput = document.getElementById('phone');
+
+        phoneInput.addEventListener('input', () => {
+            // Remove any non-digit characters
+            phoneInput.value = phoneInput.value.replace(/\D/g, '');
+        });
+
+        phoneInput.addEventListener('invalid', function () {
+            if (phoneInput.value.length < 10) {
+            phoneInput.setCustomValidity('Phone number must be exactly 10 or 11 digits.');
+            } else {
+            phoneInput.setCustomValidity('');
+            }
+        });
+
+        phoneInput.addEventListener('input', function () {
+            phoneInput.setCustomValidity('');
+        });
+    </script>
+</body>
+</html>

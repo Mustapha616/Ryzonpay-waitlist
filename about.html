@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Ryzon - Revolutionizing African Fintech</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --color-primary: hsl(217, 91%, 60%);
+            --color-primary-dark: hsl(217, 91%, 45%);
+            --color-background: hsl(0, 0%, 100%);
+            --color-foreground: hsl(220, 20%, 10%);
+            --color-secondary: hsl(220, 14%, 96%);
+            --color-muted: hsl(220, 9%, 46%);
+            --color-success: hsl(142, 76%, 36%);
+            --color-border: hsl(220, 13%, 91%);
+            --gradient-primary: linear-gradient(135deg, hsl(217, 91%, 60%) 0%, hsl(217, 91%, 70%) 100%);
+            --shadow-md: 0 4px 16px hsla(217, 91%, 60%, 0.12);
+            --shadow-lg: 0 8px 32px hsla(217, 91%, 60%, 0.16);
+            --shadow-glow: 0 0 40px hsla(217, 91%, 60%, 0.3);
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+            color: var(--color-foreground);
+            background: var(--color-background);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        /* Navigation */
+        nav {
+            padding: 1.5rem 0;
+            background: white;
+            border-bottom: 1px solid var(--color-border);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.95);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-link {
+            color: var(--color-primary);
+            text-decoration: none;
+            font-weight: 600;
+            transition: opacity 0.3s;
+        }
+
+        .nav-link:hover {
+            opacity: 0.7;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 6rem 0 4rem;
+            background: linear-gradient(180deg, var(--color-secondary) 0%, var(--color-background) 100%);
+            text-align: center;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background: hsla(217, 91%, 60%, 0.1);
+            color: var(--color-primary);
+            font-weight: 600;
+            border-radius: 9999px;
+            margin-bottom: 1.5rem;
+            animation: fadeIn 0.6s ease-out;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            animation: fadeIn 0.8s ease-out;
+        }
+
+        .gradient-text {
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--color-muted);
+            max-width: 48rem;
+            margin: 0 auto;
+            animation: fadeIn 1s ease-out;
+        }
+
+        /* Mission Section */
+        .mission {
+            padding: 6rem 0;
+            background: var(--color-background);
+        }
+
+        .mission-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            margin-top: 4rem;
+        }
+
+        .mission-card {
+            padding: 2.5rem;
+            background: white;
+            border: 2px solid var(--color-border);
+            border-radius: 1rem;
+            transition: all 0.3s ease;
+            animation: fadeIn 1s ease-out;
+        }
+
+        .mission-card:hover {
+            border-color: var(--color-primary);
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-8px);
+        }
+
+        .mission-icon {
+            width: 4rem;
+            height: 4rem;
+            background: var(--gradient-primary);
+            border-radius: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+        }
+
+        .mission-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .mission-card p {
+            color: var(--color-muted);
+            line-height: 1.8;
+        }
+
+        /* Story Section */
+        .story {
+            padding: 6rem 0;
+            background: var(--color-secondary);
+        }
+
+        .story-content {
+            max-width: 48rem;
+            margin: 0 auto;
+        }
+
+        .story h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .story-text {
+            font-size: 1.125rem;
+            color: var(--color-muted);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .highlight-box {
+            padding: 2rem;
+            background: white;
+            border-left: 4px solid var(--color-primary);
+            border-radius: 0.5rem;
+            margin: 2rem 0;
+            box-shadow: var(--shadow-md);
+        }
+
+        .highlight-box p {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--color-primary);
+        }
+
+        /* Values Section */
+        .values {
+            padding: 6rem 0;
+            background: var(--color-background);
+        }
+
+        .values h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        .values-subtitle {
+            text-align: center;
+            font-size: 1.25rem;
+            color: var(--color-muted);
+            margin-bottom: 4rem;
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .value-card {
+            text-align: center;
+            padding: 2rem;
+            background: white;
+            border: 2px solid var(--color-border);
+            border-radius: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .value-card:hover {
+            border-color: var(--color-primary);
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-4px);
+        }
+
+        .value-number {
+            width: 3rem;
+            height: 3rem;
+            background: var(--gradient-primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 0 auto 1.5rem;
+        }
+
+        .value-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .value-card p {
+            color: var(--color-muted);
+            line-height: 1.6;
+        }
+
+        /* Team Section */
+        .team {
+            padding: 6rem 0;
+            background: linear-gradient(to bottom, var(--color-background), var(--color-secondary));
+        }
+
+        .team h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        .team-subtitle {
+            text-align: center;
+            font-size: 1.25rem;
+            color: var(--color-muted);
+            margin-bottom: 4rem;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .team-card {
+            background: white;
+            border-radius: 1rem;
+            padding: 2rem;
+            text-align: center;
+            border: 2px solid var(--color-border);
+            transition: all 0.3s ease;
+        }
+
+        .team-card:hover {
+            border-color: var(--color-primary);
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-4px);
+        }
+
+        .team-avatar {
+            width: 6rem;
+            height: 6rem;
+            background: var(--gradient-primary);
+            border-radius: 50%;
+            margin: 0 auto 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2rem;
+            font-weight: 700;
+        }
+
+        .team-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .team-role {
+            color: var(--color-primary);
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+        }
+
+        .team-bio {
+            color: var(--color-muted);
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        /* CTA Section */
+        .cta {
+            padding: 6rem 0;
+            background: var(--color-background);
+        }
+
+        .cta-content {
+            max-width: 48rem;
+            margin: 0 auto;
+            text-align: center;
+            padding: 4rem 2rem;
+            background: white;
+            border: 2px solid hsla(217, 91%, 60%, 0.2);
+            border-radius: 1rem;
+            box-shadow: var(--shadow-glow);
+        }
+
+        .cta h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .cta p {
+            font-size: 1.25rem;
+            color: var(--color-muted);
+            margin-bottom: 2rem;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            padding: 0.75rem 2rem;
+            font-size: 1.125rem;
+            font-weight: 600;
+            border-radius: 0.5rem;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            background: var(--gradient-primary);
+            color: white;
+            box-shadow: var(--shadow-glow);
+        }
+
+        .btn:hover {
+            opacity: 0.9;
+            transform: translateY(-2px);
+        }
+
+        /* Footer */
+        footer {
+            padding: 3rem 0;
+            background: var(--color-foreground);
+            color: var(--color-background);
+            text-align: center;
+        }
+
+        footer p {
+            color: hsla(0, 0%, 100%, 0.8);
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 1.25rem;
+            }
+
+            nav {
+                padding: 1rem 0;
+            }
+
+            .logo {
+                font-size: 1.25rem;
+            }
+
+            .nav-link {
+                font-size: 0.9rem;
+            }
+
+            .hero {
+                padding: 4rem 0 3rem;
+            }
+
+            .hero-badge {
+                font-size: 0.875rem;
+                padding: 0.4rem 0.875rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+                line-height: 1.3;
+            }
+
+            .hero p {
+                font-size: 1rem;
+                padding: 0 0.5rem;
+            }
+
+            .mission,
+            .story,
+            .values,
+            .team,
+            .cta {
+                padding: 1.5rem 0;
+            }
+
+            .mission-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .mission-card {
+                padding: 2rem;
+            }
+
+            .mission-icon {
+                width: 3.5rem;
+                height: 3.5rem;
+                font-size: 1.75rem;
+            }
+
+            .story h2,
+            .values h2,
+            .team h2,
+            .cta h2 {
+                font-size: 1.875rem;
+            }
+
+            .story-text {
+                font-size: 1rem;
+            }
+
+            .highlight-box {
+                padding: 1.5rem;
+                margin: 1.5rem 0;
+            }
+
+            .highlight-box p {
+                font-size: 1.125rem;
+            }
+
+            .values-subtitle,
+            .team-subtitle {
+                font-size: 1.125rem;
+                padding: 0 1rem;
+            }
+
+            .values-grid,
+            .team-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .value-card,
+            .team-card {
+                padding: 1.75rem;
+            }
+
+            .cta-content {
+                padding: 2.5rem 1.5rem;
+            }
+
+            .cta h2 {
+                font-size: 1.75rem;
+            }
+
+            .cta p {
+                font-size: 1.125rem;
+            }
+
+            .btn {
+                padding: 0.875rem 1.75rem;
+                font-size: 1rem;
+                width: 100%;
+                max-width: 300px;
+            }
+
+            footer {
+                padding: 2rem 0;
+            }
+
+            footer p {
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 1.75rem;
+            }
+
+            .hero p {
+                font-size: 0.95rem;
+            }
+
+            .mission-card h3,
+            .value-card h3,
+            .team-card h3 {
+                font-size: 1.25rem;
+            }
+
+            .story h2,
+            .values h2,
+            .team h2,
+            .cta h2 {
+                font-size: 1.625rem;
+            }
+        }
+
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .hero h1 {
+                font-size: 3rem;
+            }
+
+            .mission-grid,
+            .values-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 1025px) {
+            .hero h1 {
+                font-size: 4.5rem;
+            }
+        }
+
+        /* Responsive */
+        /* @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .story h2,
+            .values h2,
+            .team h2,
+            .cta h2 {
+                font-size: 2rem;
+            }
+
+            .mission-grid,
+            .values-grid,
+            .team-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-content {
+                padding: 2rem 1.5rem;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .hero h1 {
+                font-size: 4.5rem;
+            }
+        } */
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <div class="nav-container">
+                <div class="logo"><a href="index.html">Ryzon</a></div>
+                <a href="index.html" class="nav-link">← Back to Home</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-badge"><img src="icons/earth.png" alt="Rise On Global" width="16" height="16"> About Ryzon</div>
+            <h1>Empowering Africa's <span class="gradient-text">Financial Future</span></h1>
+            <p>We're building the financial infrastructure that Africa deserves—unified, accessible, and designed for everyone.</p>
+        </div>
+    </section>
+
+    <!-- Mission Section -->
+    <section class="mission">
+        <div class="container">
+            <div class="mission-grid">
+                <div class="mission-card">
+                    <div class="mission-icon"><img src="icons/target.png" alt="Rise On target" width="32" height="32"></div>
+                    <h3>Our Mission</h3>
+                    <p>To create a unified financial ecosystem that empowers every African to access, manage, and grow their wealth seamlessly, regardless of location or connectivity.</p>
+                </div>
+
+                <div class="mission-card">
+                    <div class="mission-icon"><img src="icons/vision.png" alt="Rise On Vision" width="32" height="32"></div>
+                    <h3>Our Vision</h3>
+                    <p>A future where financial barriers no longer exist—where every African has equal access to world-class financial services through one simple, powerful platform.</p>
+                </div>
+
+                <div class="mission-card">
+                    <div class="mission-icon"><img src="icons/flash.png" alt="Rise On flash" width="32" height="32"></div>
+                    <h3>Our Impact</h3>
+                    <p>Breaking down silos in African fintech, reducing transaction friction, and enabling millions to participate fully in the digital economy.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Story Section -->
+    <section class="story">
+        <div class="container">
+            <div class="story-content">
+                <h2>The <span class="gradient-text">Ryzon Story</span></h2>
+                
+                <p class="story-text">
+                    Ryzon was born from a simple observation: Africa’s fintech landscape is not only fragmented but also challenged by inconsistent network connectivity. Many people struggle with unreliable internet that makes digital transactions slow, frustrating, or even impossible—especially in rural or underserved areas. Others have to juggle between multiple apps just to handle simple financial tasks like payments, transfers, or savings.
+                </p>
+
+                <p class="story-text">
+                    We envisioned a better way—a single, unified platform that truly understands African realities. A platform where users can send, receive, and manage money effortlessly, whether they’re online or offline.
+                </p>
+
+                <div class="highlight-box">
+                    <p>"That vision led to the creation of Ryzon, a financial ecosystem that combines the reliability of traditional banking, the flexibility of mobile money, and the innovation of emerging technologies. With KYC-lite onboarding, users can get started in minutes, and with our offline transaction capability, they can carry out secure transactions even when internet access is limited."</p>
+                </div>
+
+                <p class="story-text">
+                    Every part of Ryzon is designed to make financial access simple, fast, and inclusive—serving everyone from the tech-savvy urban professional to the rural entrepreneur taking their first step into digital finance.
+                </p>
+
+                <p class="story-text">
+                    At Ryzon, we believe financial inclusion isn’t just about access—it’s about empowerment. We’re not just building another fintech app; we’re creating the financial operating system for modern Africa, designed to ensure that everyone, everywhere, can thrive.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Values Section -->
+    <section class="values">
+        <div class="container">
+            <h2>Our <span class="gradient-text">Core Values</span></h2>
+            <p class="values-subtitle">Principles that guide everything we build</p>
+            
+            <div class="values-grid">
+                <div class="value-card">
+                    <div class="value-number">1</div>
+                    <h3>User-First Design</h3>
+                    <p>Every feature starts with understanding African users' real needs, challenges, and aspirations.</p>
+                </div>
+
+                <div class="value-card">
+                    <div class="value-number">2</div>
+                    <h3>Radical Transparency</h3>
+                    <p>Clear fees, honest communication, and complete visibility into how your money moves.</p>
+                </div>
+
+                <div class="value-card">
+                    <div class="value-number">3</div>
+                    <h3>Security First</h3>
+                    <p>Bank-grade encryption, multi-factor authentication, and continuous monitoring protect your wealth.</p>
+                </div>
+
+                <div class="value-card">
+                    <div class="value-number">4</div>
+                    <h3>Inclusive Innovation</h3>
+                    <p>Building for everyone means designing for diverse connectivity, literacy levels, and use cases.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="team">
+        <div class="container">
+            <h2>Meet the <span class="gradient-text">Team</span></h2>
+            <p class="team-subtitle">Passionate builders creating Africa's financial future</p>
+            
+            <div class="team-grid">
+                <div class="team-card">
+                    <img src="images/Musty.png" alt="MA" class="team-avatar">
+                    <h3>Mustapha Abubakar</h3>
+                    <p class="team-role">Co-Founder, CEO & CTO</p>
+                    <p class="team-bio">Fintech executive with 1+ years building financial products, Systems architect passionate about building scalable infrastructure for emerging markets.</p>
+                </div>
+
+                <!-- <div class="team-card">
+                    <div class="team-avatar">CN</div>
+                    <h3>Ibrahim Khalil</h3>
+                    <p class="team-role">Co-Founder & CTO</p>
+                    <p class="team-bio"></p>
+                </div> -->
+
+                <div class="team-card">
+                    <img src="" alt="" class="team-avatar">
+                    <h3>Ibrahim Khalil</h3>
+                    <p class="team-role">Co-Founder & Head of Product</p>
+                    <p class="team-bio">Product designer obsessed with creating intuitive experiences for diverse users.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Join the <span class="gradient-text">Revolution</span></h2>
+                <p>Be among the first to experience Africa's unified financial platform</p>
+                <a href="index.html#waitlist" class="btn">
+                    Join Our Waitlist
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Ryzon. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Add scroll animation on cards
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.mission-card, .value-card, .team-card').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(30px)';
+            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(card);
+        });
+    </script>
+</body>
+</html>

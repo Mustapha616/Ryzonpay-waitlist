@@ -1,0 +1,1264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Ryzon - Get in Touch</title>
+    <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function(){
+            emailjs.init("CuTH12h2jcq2vaymN"); // <-- replace with your actual public key
+        })();
+    </script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --color-primary: hsl(217, 91%, 60%);
+            --color-primary-dark: hsl(217, 91%, 45%);
+            --color-background: hsl(0, 0%, 100%);
+            --color-foreground: hsl(220, 20%, 10%);
+            --color-secondary: hsl(220, 14%, 96%);
+            --color-muted: hsl(220, 9%, 46%);
+            --color-success: hsl(142, 76%, 36%);
+            --color-border: hsl(220, 13%, 91%);
+            --gradient-primary: linear-gradient(135deg, hsl(217, 91%, 60%) 0%, hsl(217, 91%, 70%) 100%);
+            --shadow-md: 0 4px 16px hsla(217, 91%, 60%, 0.12);
+            --shadow-lg: 0 8px 32px hsla(217, 91%, 60%, 0.16);
+            --shadow-glow: 0 0 40px hsla(217, 91%, 60%, 0.3);
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+            color: var(--color-foreground);
+            background: var(--color-background);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        /* Navigation */
+        nav {
+            padding: 1.5rem 0;
+            background: white;
+            border-bottom: 1px solid var(--color-border);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.95);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-link {
+            color: var(--color-primary);
+            text-decoration: none;
+            font-weight: 600;
+            transition: opacity 0.3s;
+        }
+
+        .nav-link:hover {
+            opacity: 0.7;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 6rem 0 4rem;
+            background: linear-gradient(180deg, var(--color-secondary) 0%, var(--color-background) 100%);
+            text-align: center;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background: hsla(217, 91%, 60%, 0.1);
+            color: var(--color-primary);
+            font-weight: 600;
+            border-radius: 9999px;
+            margin-bottom: 1.5rem;
+            animation: fadeIn 0.6s ease-out;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            animation: fadeIn 0.8s ease-out;
+        }
+
+        .gradient-text {
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--color-muted);
+            max-width: 48rem;
+            margin: 0 auto;
+            animation: fadeIn 1s ease-out;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            padding: 6rem 0;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 4rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        /* Contact Info */
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .info-card {
+            padding: 2rem;
+            background: white;
+            border: 2px solid var(--color-border);
+            border-radius: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .info-card:hover {
+            border-color: var(--color-primary);
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-4px);
+        }
+
+        .info-icon {
+            width: 3.5rem;
+            height: 3.5rem;
+            background: var(--gradient-primary);
+            border-radius: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+        }
+
+        .info-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .info-card p {
+            color: var(--color-muted);
+            line-height: 1.6;
+        }
+
+        .info-card a {
+            color: var(--color-primary);
+            text-decoration: none;
+            font-weight: 600;
+            transition: opacity 0.3s;
+        }
+
+        .info-card a:hover {
+            opacity: 0.7;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-icon {
+            width: 2.5rem;
+            height: 2.5rem;
+            background: hsla(217, 91%, 60%, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--color-primary);
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .social-icon:hover {
+            background: var(--color-primary);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* Contact Form */
+        .contact-form-container {
+            background: white;
+            border: 2px solid hsla(217, 91%, 60%, 0.2);
+            border-radius: 1rem;
+            padding: 3rem;
+            box-shadow: var(--shadow-glow);
+        }
+
+        .contact-form-container h2 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-form-container > p {
+            color: var(--color-muted);
+            margin-bottom: 2rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .form-input,
+        .form-textarea,
+        .form-select {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            font-size: 1rem;
+            border: 2px solid var(--color-border);
+            border-radius: 0.5rem;
+            transition: border-color 0.3s;
+            font-family: inherit;
+        }
+
+        .form-input:focus,
+        .form-textarea:focus,
+        .form-select:focus {
+            outline: none;
+            border-color: var(--color-primary);
+        }
+
+        .form-textarea {
+            resize: vertical;
+            min-height: 150px;
+        }
+
+        .form-select {
+            cursor: pointer;
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23666' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 0.75rem center;
+            background-size: 1.25rem;
+            padding-right: 3rem;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            padding: 0.75rem 2rem;
+            font-size: 1.125rem;
+            font-weight: 600;
+            border-radius: 0.5rem;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            background: var(--gradient-primary);
+            color: white;
+            box-shadow: var(--shadow-glow);
+            width: 100%;
+        }
+
+        .btn:hover {
+            opacity: 0.9;
+            transform: translateY(-2px);
+        }
+
+        .btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .spinner {
+        display: inline-block;
+        width: 16px;
+        height: 16px;
+        border: 2px solid rgba(255, 255, 255, 0.6);
+        border-top-color: #fff;
+        border-radius: 50%;
+        animation: spin 0.6s linear infinite;
+        margin-left: 8px;
+        vertical-align: middle;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            padding: 6rem 0;
+            background: var(--color-secondary);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .section-subtitle {
+            font-size: 1.25rem;
+            color: var(--color-muted);
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: white;
+            border: 2px solid var(--color-border);
+            border-radius: 1rem;
+            margin-bottom: 1rem;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .faq-item:hover {
+            border-color: var(--color-primary);
+        }
+
+        .faq-question {
+            padding: 1.5rem 2rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            font-size: 1.125rem;
+            user-select: none;
+        }
+
+        .faq-question:hover {
+            background: var(--color-secondary);
+        }
+
+        .faq-icon {
+            width: 1.5rem;
+            height: 1.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+        }
+
+        .faq-answer-content {
+            padding: 0 2rem 1.5rem;
+            color: var(--color-muted);
+            line-height: 1.8;
+        }
+
+        /* Office Locations */
+        .locations-section {
+            padding: 6rem 0;
+            background: var(--color-background);
+        }
+
+        .locations-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .location-card {
+            padding: 2rem;
+            background: white;
+            border: 2px solid var(--color-border);
+            border-radius: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .location-card:hover {
+            border-color: var(--color-primary);
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-4px);
+        }
+
+        .location-flag {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .location-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .location-type {
+            color: var(--color-primary);
+            font-weight: 600;
+            font-size: 0.875rem;
+            margin-bottom: 1rem;
+        }
+
+        .location-card p {
+            color: var(--color-muted);
+            line-height: 1.6;
+        }
+
+        /* Toast Notification */
+        .toast {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            padding: 1rem 1.5rem;
+            background: var(--color-success);
+            color: white;
+            border-radius: 0.5rem;
+            box-shadow: var(--shadow-lg);
+            transform: translateY(150%);
+            opacity: 0;
+            transition: all 0.3s ease;
+            z-index: 1001;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .toast.show {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        /* Footer */
+        footer {
+            padding: 3rem 0;
+            background: var(--color-foreground);
+            color: var(--color-background);
+            text-align: center;
+        }
+
+        footer p {
+            color: hsla(0, 0%, 100%, 0.8);
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 1.25rem;
+            }
+
+            nav {
+                padding: 1rem 0;
+            }
+
+            .logo {
+                font-size: 1.25rem;
+            }
+
+            .nav-link {
+                font-size: 0.9rem;
+            }
+
+            .hero {
+                padding: 4rem 2rem 3rem;
+            }
+
+            .hero-badge {
+                font-size: 0.875rem;
+                padding: 0.4rem 0.875rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+                line-height: 1.3;
+            }
+
+            .hero p {
+                font-size: 1rem;
+                padding: 0 0.5rem;
+            }
+
+            .contact-section,
+            .faq-section,
+            .locations-section {
+                padding: 3.5rem 0;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .contact-info {
+                gap: 1.5rem;
+            }
+
+            .info-card {
+                padding: 1.75rem;
+            }
+
+            .info-icon {
+                width: 3rem;
+                height: 3rem;
+                font-size: 1.25rem;
+            }
+
+            .info-card h3 {
+                font-size: 1.125rem;
+            }
+
+            .social-links {
+                gap: 0.75rem;
+            }
+
+            .social-icon {
+                width: 2.25rem;
+                height: 2.25rem;
+            }
+
+            .contact-form-container {
+                padding: 2rem 1.5rem;
+            }
+
+            .contact-form-container h2 {
+                font-size: 1.5rem;
+            }
+
+            .contact-form-container > p {
+                font-size: 0.95rem;
+            }
+
+            .form-group {
+                margin-bottom: 1.25rem;
+            }
+
+            .form-label {
+                font-size: 0.95rem;
+            }
+
+            .form-input,
+            .form-textarea,
+            .form-select {
+                padding: 0.625rem 0.875rem;
+                font-size: 0.95rem;
+            }
+
+            .form-textarea {
+                min-height: 120px;
+            }
+
+            .btn {
+                padding: 0.875rem 1.75rem;
+                font-size: 1rem;
+            }
+
+            .section-header {
+                margin-bottom: 2.5rem;
+            }
+
+            .section-header h2 {
+                font-size: 1.875rem;
+            }
+
+            .section-subtitle {
+                font-size: 1.125rem;
+                padding: 0 1rem;
+            }
+
+            .faq-question {
+                padding: 1rem 1.5rem;
+                font-size: 1rem;
+            }
+
+            .faq-icon {
+                width: 1.25rem;
+                height: 1.25rem;
+            }
+
+            .faq-answer-content {
+                padding: 0 1.5rem 1rem;
+                font-size: 0.95rem;
+            }
+
+            .locations-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .location-card {
+                padding: 1.75rem;
+            }
+
+            .location-flag {
+                font-size: 2.5rem;
+            }
+
+            .location-card h3 {
+                font-size: 1.25rem;
+            }
+
+            .toast {
+                left: 1rem;
+                right: 1rem;
+                bottom: 1rem;
+                padding: 0.875rem 1.25rem;
+                font-size: 0.9rem;
+            }
+
+            footer {
+                padding: 2rem 0;
+            }
+
+            footer p {
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 1.75rem;
+            }
+
+            .hero p {
+                font-size: 0.95rem;
+            }
+
+            .info-card {
+                padding: 1.5rem;
+            }
+
+            .contact-form-container {
+                padding: 1.75rem 1.25rem;
+            }
+
+            .contact-form-container h2 {
+                font-size: 1.375rem;
+            }
+
+            .section-header h2 {
+                font-size: 1.625rem;
+            }
+
+            .faq-question {
+                padding: 0.875rem 1.25rem;
+                font-size: 0.95rem;
+            }
+
+            .faq-answer-content {
+                padding: 0 1.25rem 0.875rem;
+            }
+
+            .location-card h3 {
+                font-size: 1.125rem;
+            }
+        }
+
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .hero h1 {
+                font-size: 3rem;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .locations-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 1025px) {
+            .hero h1 {
+                font-size: 4.5rem;
+            }
+        }
+
+        /* Responsive
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .contact-form-container {
+                padding: 2rem 1.5rem;
+            }
+
+            .section-header h2 {
+                font-size: 2rem;
+            }
+
+            .faq-question {
+                padding: 1rem 1.5rem;
+                font-size: 1rem;
+            }
+
+            .faq-answer-content {
+                padding: 0 1.5rem 1rem;
+            }
+
+            .toast {
+                left: 1rem;
+                right: 1rem;
+                bottom: 1rem;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .hero h1 {
+                font-size: 4.5rem;
+            }
+        } */
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <div class="nav-container">
+                <div class="logo"><a href="index.html">Ryzon</a></div>
+                <a href="index.html" class="nav-link">← Back to Home</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-badge"><img src="icons/message.png" alt="Contact" width="16" height="16"> Get in Touch</div>
+            <h1>We'd Love to <span class="gradient-text">Hear From You</span></h1>
+            <p>Have questions about Duella? Want to partner with us? Our team is here to help.</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-grid">
+                <!-- Contact Info -->
+                <div class="contact-info">
+                    <div class="info-card">
+                        <div class="info-icon"><img src="icons/email.png" alt="Email Us" width="32" height="32"></div>
+                        <h3>Email Us</h3>
+                        <p>For general inquiries and support</p>
+                        <a href="mailto:mustaphaaliyu616@gmail.com">hello@ryyzon.com</a>
+                    </div>
+
+                    <div class="info-card">
+                        <div class="info-icon"><img src="icons/suitcase.png" alt="Business" width="32" height="32"></div>
+                        <h3>Business Inquiries</h3>
+                        <p>Partnerships and business opportunities</p>
+                        <a href="mustaphaaliyu616@gmail.com">business@ryyzon.com</a>
+                    </div>
+
+                    <div class="info-card">
+                        <div class="info-icon"><img src="icons/chat.png" alt="Support" width="32" height="32"></div>
+                        <h3>Support</h3>
+                        <p>Need help with your account?</p>
+                        <a href="mailto:mustaphaaliyu616@gmail.com">support@ryyzon.com</a>
+                    </div>
+
+                    <div class="info-card">
+                        <div class="info-icon"><img src="icons/earth.png" alt="Follow Us" width="32" height="32"></div>
+                        <h3>Follow Us</h3>
+                        <p>Stay connected on social media</p>
+                        <div class="social-links">
+                            <a href="#" class="social-icon" aria-label="Twitter">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/>
+                                </svg>
+                            </a>
+                            <a href="#" class="social-icon" aria-label="LinkedIn">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+                                    <rect x="2" y="9" width="4" height="12"/>
+                                    <circle cx="4" cy="4" r="2"/>
+                                </svg>
+                            </a>
+                            <a href="#" class="social-icon" aria-label="Instagram">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+                                </svg>
+                            </a>
+                            <a href="#" class="social-icon" aria-label="Facebook">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="contact-form-container">
+                    <h2>Send Us a Message</h2>
+                    <p>Fill out the form and we'll get back to you within 24 hours</p>
+
+                    <!-- <form id="contactForm" onsubmit="handleSubmit(event)">
+                        <div class="form-group">
+                            <label class="form-label">Full Name *</label>
+                            <input type="text" class="form-input" required placeholder="John Doe">
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Email Address *</label>
+                            <input type="email" class="form-input" required placeholder="john@example.com">
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Phone Number</label>
+                            <input type="tel" class="form-input" placeholder="+234 XXX XXX XXXX">
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Subject *</label>
+                            <select class="form-select" required>
+                                <option value="">Select a subject</option>
+                                <option value="general">General Inquiry</option>
+                                <option value="support">Technical Support</option>
+                                <option value="partnership">Partnership Opportunity</option>
+                                <option value="media">Media/Press</option>
+                                <option value="feedback">Feedback</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Message *</label>
+                            <textarea class="form-textarea" required placeholder="Tell us how we can help you..."></textarea>
+                        </div>
+
+                        <button type="submit" class="btn">
+                            Send Message
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="22" y1="2" x2="11" y2="13"/>
+                                <polygon points="22 2 15 22 11 13 2 9 22 2"/>
+                            </svg>
+                            <span id="btnSpinner" class="spinner" style="display:none;"></span>
+                        </button>
+                    </form> -->
+
+                    <form id="contactForm" onsubmit="handleSubmit(event)">
+                        <div class="form-group">
+                            <label class="form-label">Full Name *</label>
+                            <input type="text" class="form-input" name="user_name" required placeholder="Ibrahim Khalil">
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Email Address *</label>
+                            <input type="email" class="form-input" name="user_email" required placeholder="khalil@example.com">
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Phone Number</label>
+                            <input type="tel" class="form-input" name="user_phone" placeholder="+234 XXX XXX XXXX" inputmode="numeric" minlength="10" maxlength="11" pattern="^(90|70|80|91|81|71|070|080|081|090|091|071)[0-9]{8}$">
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Subject *</label>
+                            <select class="form-select" name="subject" required>
+                                <option value="">Select a subject</option>
+                                <option value="general">General Inquiry</option>
+                                <option value="support">Technical Support</option>
+                                <option value="partnership">Partnership Opportunity</option>
+                                <option value="media">Media/Press</option>
+                                <option value="feedback">Feedback</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Message *</label>
+                            <textarea class="form-textarea" name="message" required placeholder="Tell us how we can help you..."></textarea>
+                        </div>
+
+                        <button type="submit" class="btn" id="sendBtn">
+                            <span id="btnText">Send Message</span>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="22" y1="2" x2="11" y2="13"/>
+                                <polygon points="22 2 15 22 11 13 2 9 22 2"/>
+                            </svg>
+                            <span id="btnSpinner" class="spinner" style="display:none;"></span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Frequently Asked <span class="gradient-text">Questions</span></h2>
+                <p class="section-subtitle">Quick answers to common questions</p>
+            </div>
+
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <span>When will Ryzon be available?</span>
+                        <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M6 9l6 6 6-6"/>
+                        </svg>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            We're currently in development and planning to launch in Q2 2026. <a href="index.html#waitlistForm">Join the Waitlist</a> to be among the first to know when we go live!
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <span>Which countries will Ryzon support at launch?</span>
+                        <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M6 9l6 6 6-6"/>
+                        </svg>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            We'll initially launch in Nigeria, with plans to expand to other African markets throughout 2028.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <span>How is Ryzon different from other fintech apps?</span>
+                        <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M6 9l6 6 6-6"/>
+                        </svg>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Ryzon unifies multiple financial services—payments, transfers, savings, and campaigns—into one seamless platform. Plus, our offline transaction capabilities and KYC-lite onboarding make us uniquely accessible across Africa.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <span>Is my money safe with Ryzon?</span>
+                        <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M6 9l6 6 6-6"/>
+                        </svg>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Absolutely. We use bank-grade encryption, multi-factor authentication, and comply with all regulatory requirements. Your funds are secured with licensed financial institutions.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <span>How do I become a partner or merchant?</span>
+                        <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M6 9l6 6 6-6"/>
+                        </svg>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            We'd love to partner with you! Please reach out to <a href="mailto:mustaphaaliyu616@gmail.com">business@ryyzon.com</a> with details about your business and how you'd like to collaborate.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <span>Are there any fees for using Ryzon?</span>
+                        <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M6 9l6 6 6-6"/>
+                        </svg>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            We believe in transparency. Basic transactions will have minimal fees, and we'll always show you the exact cost before you confirm. Many features will be completely free.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Office Locations -->
+    <section class="locations-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our <span class="gradient-text">Locations</span></h2>
+                <p class="section-subtitle">Find us across Africa</p>
+            </div>
+
+            <div class="locations-grid">
+                <div class="location-card">
+                    <div class="location-flag">🇳🇬</div>
+                    <h3>Adamawa, Nigeria</h3>
+                    <p class="location-type">Headquarters</p>
+                    <p>Bank Road, Yola<br>Adamawa, Nigeria<br>100001</p>
+                </div>
+
+                <!-- <div class="location-card">
+                    <div class="location-flag">🇬🇭</div>
+                    <h3>Accra, Ghana</h3>
+                    <p class="location-type">Regional Office</p>
+                    <p>East Legon<br>Accra, Ghana<br>GA-022-5012</p>
+                </div>
+
+                <div class="location-card">
+                    <div class="location-flag">🇰🇪</div>
+                    <h3>Nairobi, Kenya</h3>
+                    <p class="location-type">Regional Office</p>
+                    <p>Westlands<br>Nairobi, Kenya<br>00100</p>
+                </div> -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Ryzon. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+            <polyline points="22 4 12 14.01 9 11.01"/>
+        </svg>
+        <span>Message sent successfully! We'll get back to you soon.</span>
+    </div>
+
+    <script>
+        // function handleSubmit(event) {
+        //     event.preventDefault();
+            
+        //     // Show success toast
+        //     const toast = document.getElementById('toast');
+        //     toast.classList.add('show');
+            
+        //     // Reset form
+        //     document.getElementById('contactForm').reset();
+            
+        //     // Hide toast after 5 seconds
+        //     setTimeout(() => {
+        //         toast.classList.remove('show');
+        //     }, 5000);
+        // }
+
+       
+        function handleSubmit(event) {
+            event.preventDefault();
+
+            const contactForm = event.target;
+            const toast = document.getElementById('toast');
+            const sendBtn = document.getElementById('sendBtn');
+            const btnText = document.getElementById('btnText');
+            const btnSpinner = document.getElementById('btnSpinner');
+
+            // Show loading state
+            sendBtn.disabled = true;
+            btnText.textContent = "Sending...";
+            btnSpinner.style.display = "inline-block";
+
+            emailjs.sendForm('service_d8qfnea', 'template_vggrvfl', contactForm)
+                .then(() => {
+                    toast.textContent = "Message sent successfully!";
+                    toast.classList.add('show');
+                    contactForm.reset();
+
+                    // Reset button
+                    sendBtn.disabled = false;
+                    btnText.textContent = "Send Message";
+                    btnSpinner.style.display = "none";
+
+                    setTimeout(() => {
+                        toast.classList.remove('show');
+                    }, 5000);
+                })
+                .catch((error) => {
+                    toast.textContent = "Failed to send message. Please try again.";
+                    toast.classList.add('show');
+
+                    // Reset button
+                    sendBtn.disabled = false;
+                    btnText.textContent = "Send Message";
+                    btnSpinner.style.display = "none";
+
+                    console.error("EmailJS error:", error);
+
+                    setTimeout(() => {
+                        toast.classList.remove('show');
+                    }, 5000);
+                });
+        }
+
+        // Attach handleSubmit
+        contactForm = document.getElementById('contactForm');
+        if (contactForm) {
+            contactForm.addEventListener('submit', handleSubmit);
+        }
+
+
+
+        function toggleFAQ(element) {
+            const faqItem = element.parentElement;
+            const wasActive = faqItem.classList.contains('active');
+            
+            // Close all FAQ items
+            document.querySelectorAll('.faq-item').forEach(item => {
+                item.classList.remove('active');
+            });
+            
+            // Toggle current item
+            if (!wasActive) {
+                faqItem.classList.add('active');
+            }
+        }
+
+        // Add scroll animation to cards
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.info-card, .faq-item, .location-card').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(30px)';
+            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(card);
+        });
+
+        // Smooth scroll for any anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        const contactForm = document.getElementById('contactForm');
+
+        if (contactForm) { // ensure the form exists
+            contactForm.addEventListener('submit', function(event) {
+                event.preventDefault(); // stop normal submission
+
+                emailjs.sendForm('service_d8qfnea', 'template_kj1cnbc', this)
+                    .then(function() {
+                        alert('Message sent successfully!');
+                        contactForm.reset(); // clear the form
+                    }, function(error) {
+                        alert('Failed to send message: ' + JSON.stringify(error));
+                    });
+            });
+        }
+
+        contactForm = document.getElementById('contactForm');
+
+        contactForm.addEventListener('submit', function(event) {
+            event.preventDefault(); // prevent form submission
+
+            emailjs.sendForm('service_d8qfnea', 'template_kj1cnbc', this)
+                .then(() => {
+                    alert('Message sent successfully!');
+                    contactForm.reset();
+                }, (error) => {
+                    alert('Failed to send message: ' + JSON.stringify(error));
+                });
+        });
+
+        
+
+    </script>
+</body>
+</html>
