@@ -834,7 +834,7 @@
 
         /* Final CTA */
         .final-cta {
-            padding: 4rem 5rem;
+            padding: 3rem 5rem;
             background: var(--color-dark);
             color: white;
             overflow: visible;
@@ -844,10 +844,17 @@
         }
 
         .cta-container {
+            position: relative; /* This makes it the reference point for absolute children */
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 4rem;
             align-items: center;
+
+
+            /* display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center; */
         }
 
         .cta-content h2 {
@@ -878,11 +885,20 @@
         }
 
         .cta-image {
-            display: block;
-            height: 250px;
+            position: absolute;
+            top: -550px; /* Adjust this to control how high it overlaps */
+            left: 50%;
+            /* transform: translateX(-50%); */
+            height: 1300px;
             object-fit: cover;
-            margin-top: -350px;
-            justify-content: center;
+            z-index: 1; /* Ensures it sits above other elements */
+
+
+            /* display: block;
+            height: 750px;
+            object-fit: cover;
+            margin-top: -250px;
+            justify-content: center; */
         }
 
         /* Footer */
@@ -1446,8 +1462,18 @@
                         </div>
                     </div>
                 </div>
-                <div class="hero-image">
-                    <img src="images/girl.png" alt="Ryzon App" class="hero-mockup" onerror="this.style.display='none'">
+                <div class="hero-image" id="animated-icon-27">
+                    <!-- <img src="images/girl.png" alt="Ryzon App" class="hero-mockup" onerror="this.style.display='none'"> -->
+                    <!-- <div id="animated-icon-9" style="width:24px; height:24px;"></div> -->
+                        <script>
+                            lottie.loadAnimation({
+                                container: document.getElementById('animated-icon-27'), // the DOM element
+                                renderer: 'svg', // or 'canvas'
+                                loop: true,
+                                autoplay: true,
+                                path: 'lotti-icons/Mortgage-Loan-Approval.json' // URL to your .json file
+                            });
+                        </script>
                 </div>
             </div>
         </div>
@@ -1944,8 +1970,18 @@
                         <a href="about.html"><button class="btn btn-outline">Learn More</button></a>
                     </div>
                 </div>
-                <div class="cta-image">
-                    <img src="images/lady.png" alt="Ryzon App Features" class="hero-mockup" onerror="this.style.display='none'">
+                <div class="cta-image" id="animated-icon-29">
+                    <!-- <img src="images/lady.png" alt="Ryzon App Features" class="hero-mockup" onerror="this.style.display='none'"> -->
+                    <!-- <div id="animated-icon-28" style="width:100%; height:100%;"></div> -->
+                        <script>
+                            lottie.loadAnimation({
+                                container: document.getElementById('animated-icon-29'), // the DOM element
+                                renderer: 'svg', // or 'canvas'
+                                loop: true,
+                                autoplay: true,
+                                path: 'lotti-icons/Digital-Payment.json' // URL to your .json file
+                            });
+                        </script>
                 </div>
             </div>
         </div>
