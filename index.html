@@ -74,10 +74,22 @@
         }
 
         .logo-icon {
+            display: flex;
             width: 2rem;
             height: 2rem;
             background: var(--gradient-primary);
             border-radius: 0.5rem;
+            justify-content: center;
+            align-items: center;
+            
+        }
+
+        .logo-icon-inner {
+            width: 70%;
+            height: 70%;
+            object-fit: contain;
+            border-radius: 0.5rem;
+            align-content: center;
         }
 
         .nav-links {
@@ -1395,7 +1407,9 @@
         <div class="container">
             <div class="nav-container">
                 <div class="logo">
-                    <div class="logo-icon"></div>
+                    <div class="logo-icon">
+                        <img class="logo-icon-inner" src="icons/Ryzon-Secondary-Logo.png" alt="" >
+                    </div>
                     <span>Ryzon</span>
                 </div>
                 <ul class="nav-links">
